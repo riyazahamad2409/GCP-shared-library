@@ -5,7 +5,6 @@ def call(GitSCM) {
             $class: 'GitSCM',
             branches: [[name: '*/master']],
             extensions: [[$class: 'CleanBeforeCheckout']],
-            credentialsId: [['github_credentials']],
-            userRemoteConfigs: [[url: 'https://github.com/riyaz-ahamadm92/java-projects.git']],
+            userRemoteConfigs: [[credentialsId: 'github_credentials', url: 'https://github.com/riyaz-ahamadm92/java-projects.git']],
     ])
 }
