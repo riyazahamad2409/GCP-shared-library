@@ -1,6 +1,6 @@
-import hudson.plugins.git.GitSCM
+import com.mycompany.gcp.Git
 
-def call(Map args=[:]) {
+def call(Map args=[:], Closure body={}) {
     node {
         stage("Checkout") {
             new Git(this).checkout("${args.repo}")
