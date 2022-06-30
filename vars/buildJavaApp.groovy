@@ -1,4 +1,4 @@
-def call("App build") {
+def call() {
     node {
     
         stage("Compile") {
