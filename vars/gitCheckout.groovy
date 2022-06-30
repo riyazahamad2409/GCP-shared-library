@@ -5,4 +5,5 @@ def call(Map args=[:]) {
         stage("Checkout") {
             new Git(this).checkout("${args.repo}")
         }
+    }
 }
