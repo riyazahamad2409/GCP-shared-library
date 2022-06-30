@@ -1,3 +1,8 @@
+import DbUtils
+def dbUtils = new DbUtils()
+
+dbUtils.save(myapp)
+
 def call() {
   node {
     
