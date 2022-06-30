@@ -1,11 +1,6 @@
-import com.mycompany.gcp.Git
-
-def call(Map args=[:], Closure body={}) {
+def call(Maven build) {
     node {
-        stage("Checkout") {
-            new Git(this).checkout("${args.repo}")
-        }
-
+    
         stage("Compile") {
             sh "mvn clean compile"
         }
@@ -21,6 +16,5 @@ def call(Map args=[:], Closure body={}) {
         stage("Package Artifact Jar") {
             sh "mvn package -DskipTests=true"
         }
-        body()
     }
 }
