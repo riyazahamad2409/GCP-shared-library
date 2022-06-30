@@ -1,15 +1,14 @@
-import DbUtils
-def dbUtils = new DbUtils()
+import vars
 
-dbUtils.save(myapp)
+
 
 def call() {
   node {
     
     stage('Push image') {
       docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-              myapp.push("latest")
-              myapp.push("${env.BUILD_ID}")
+              Exam.myapp.push("latest")
+              Exam.myapp.push("${env.BUILD_ID}")
       }
     }
   }
