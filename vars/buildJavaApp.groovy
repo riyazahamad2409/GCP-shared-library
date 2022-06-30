@@ -1,20 +1,14 @@
-def call(Maven build) {
+def call("App build") {
     node {
     
         stage("Compile") {
+           withMaven(
+               maven: 'maven-3'
+           ){
             sh "mvn clean compile"
+           }
         }
 
-        stage("Unit Test") {
-            sh "mvn test"
-        }
-
-        stage("Integration Test") {
-            sh "mvn verify"
-        }
-
-        stage("Package Artifact Jar") {
-            sh "mvn package -DskipTests=true"
-        }
+        
     }
 }
