@@ -7,19 +7,19 @@ def call(Map args=[:], Closure body={}) {
         }
 
         stage("Compile") {
-            sh "./mvnw clean compile"
+            sh "./mvn clean compile"
         }
 
         stage("Unit Test") {
-            sh "./mvnw test"
+            sh "./mvn test"
         }
 
         stage("Integration Test") {
-            sh "./mvnw verify"
+            sh "./mvn verify"
         }
 
         stage("Package Artifact Jar") {
-            sh "./mvnw package -DskipTests=true"
+            sh "./mvn package -DskipTests=true"
         }
         body()
     }
