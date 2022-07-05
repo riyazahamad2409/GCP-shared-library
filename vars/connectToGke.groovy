@@ -7,4 +7,6 @@ def call(Map file = [:]) {
   
   sh "kubectl apply -f ${file.name}.yaml"
   sh "kubectl get pods"
+  sh "sleep 30s"
+  sh "kubectl get pods"
 }
