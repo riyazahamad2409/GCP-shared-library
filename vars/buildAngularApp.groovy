@@ -4,7 +4,10 @@ def call() {
     
 
         stage("Unit Test") {
-            sh "npm run install"
+            sh "npm install"
+        }
+        stage("Unit Test") {
+            sh "ng build --prod"
         }
 
         
