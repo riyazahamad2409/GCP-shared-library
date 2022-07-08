@@ -7,7 +7,7 @@ def call() {
             sh "npm install"
         }
         stage("Build App") {
-            sh "npm start"
+            sh "npm run build"
         }
 
         
