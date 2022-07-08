@@ -3,11 +3,11 @@ def call() {
     node {
     
 
-        stage("Unit Test") {
+        stage("Install node modules") {
             sh "npm install"
         }
-        stage("Unit Test") {
-            sh "ng build --prod"
+        stage("Build App") {
+            sh "npm run build --prod"
         }
 
         
