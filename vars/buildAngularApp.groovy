@@ -4,12 +4,10 @@ def call() {
     
 
         stage("Unit Test") {
-            sh "npm run test"
+            sh "npm run install"
         }
 
-        stage("Integration Test") {
-            sh "npm run build"
-        }
+        
         
     }
 }
