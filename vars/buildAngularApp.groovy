@@ -4,10 +4,10 @@ def call() {
     
 
         stage("Install node modules") {
-            sh "npm install -g npm@8.10.0"
+            sh "sudo npm install -g npm@8.10.0"
         }
         stage("Build App") {
-            sh "npm run build"
+            sh "sudo npm run build"
         }
 
         
