@@ -2,9 +2,7 @@ def call() {
     
     node {
     
-        stage("Compile") {
-            sh "npm install"
-        }
+
         stage("Unit Test") {
             sh "npm run test"
         }
