@@ -5,6 +5,7 @@ def call() {
 
         stage("Install node modules") {
             sh "npm install"
+            sh "pwd"
         }
     }
 }
